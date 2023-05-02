@@ -13,7 +13,7 @@ class MovieRepository:
         return await Movie.objects.get(pk=id)
 
     async def insert_movie(self, details: Dict[str, Any]) -> bool:
-        """Create Cinema function"""
+        """ Create Cinema function """
 
         try:
             await Movie.objects.create(**details)
