@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 from starlette.responses import JSONResponse
 
-from apps.movie.models import Movie
 from apps.movie.repository import MovieRepository
 from apps.movie.schema import MovieSchema
 

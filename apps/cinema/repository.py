@@ -7,6 +7,12 @@ class CinemaRepository:
 
     """ Cinema Repository """
 
+    async def get_all_movie(self):
+        return await Cinema.objects.all()
+
+    async def get_movie(self, id: int):
+        return await Cinema.objects.get(pk=id)
+
     async def insert_cinema(self, details: Dict[str, Any]) -> bool:
         """Create Cinema function"""
 
@@ -21,7 +27,7 @@ class CinemaRepository:
         """ Update Cinema Function"""
 
         try:
-            cinema = await Cinema.objects.get(pk=id)
+            cinema = await self.get_movie(id)
             await cinema.update(**details)
 
         except Exception:
@@ -32,7 +38,7 @@ class CinemaRepository:
         """ Delete Cinema Function"""
 
         try:
-            cinema = await Cinema.objects.get(pk=id)
+            cinema = await self.get_movie(id)
             await cinema.delete()
 
         except Exception:
