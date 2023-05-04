@@ -17,7 +17,7 @@ async def add_cinema(req: CinemaSchema):
     if result is True:
         return req
     else:
-        return JSONResponse(content={'message': 'update trainer profile problem encountered'}, status_code=500)
+        return JSONResponse(content={'message': 'update cinema problem encountered'}, status_code=500)
 
 
 @cinema_router.put("/update/{id}")
@@ -29,7 +29,7 @@ async def update_cinema(id: int, req: CinemaSchema):
     if result is True:
         return req
     else:
-        return JSONResponse(content={'message': 'update trainer profile problem encountered'}, status_code=500)
+        return JSONResponse(content={'message': 'update cinema problem encountered'}, status_code=500)
 
 
 @cinema_router.delete("/delete/{id}")

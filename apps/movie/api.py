@@ -16,7 +16,7 @@ async def insert_movie(req: MovieSchema):
     if result is True:
         return req
     else:
-        return JSONResponse(content={'message': 'update trainer profile problem encountered'}, status_code=500)
+        return JSONResponse(content={'message': 'update movie problem encountered'}, status_code=500)
 
 
 @movie_router.put("/update/{id}")
@@ -28,7 +28,7 @@ async def update_movie(id: int, req: MovieSchema):
     if result is True:
         return req
     else:
-        return JSONResponse(content={'message': 'update trainer profile problem encountered'}, status_code=500)
+        return JSONResponse(content={'message': 'update movie problem encountered'}, status_code=500)
 
 
 @movie_router.delete("/delete/{id}")
@@ -39,4 +39,4 @@ async def delete_movie(id: int):
     if result is True:
         return result
     else:
-        return JSONResponse(content={'message': 'update trainer profile problem encountered'}, status_code=500)
+        return JSONResponse(content={'message': 'update movie problem encountered'}, status_code=500)

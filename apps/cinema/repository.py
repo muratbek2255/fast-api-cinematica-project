@@ -4,7 +4,6 @@ from apps.cinema.models import Cinema
 
 
 class CinemaRepository:
-
     """ Cinema Repository """
 
     async def get_all_movie(self):

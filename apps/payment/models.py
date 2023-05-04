@@ -5,16 +5,21 @@ import ormar
 
 from apps.rent.models import Rent
 
+from db.session import metadata, database
+
 
 class StatusOfPayment(enum.Enum):
     IN_PROGRESS = 'IN_PROGRESS'
-    CREATED = 'STATUS_CREATED'
     SUCCESS = 'STATUS_SUCCESS'
     ROLLBACK = 'STATUS_ROLLBACK'
 
 
 class Payment(ormar.Model):
     """Payment model"""
+    class Meta(ormar.ModelMeta):
+        tablename = 'payments'
+        metadata = metadata
+        database = database
 
     id: int = ormar.Integer(primary_key=True)
     created_at: datetime = ormar.DateTime(nullable=True)
